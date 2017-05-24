@@ -1,6 +1,3 @@
-
-//changed the name "distTo" to "energyTo"
-
 import java.awt.Color;
 import java.lang.IllegalArgumentException;
 import java.lang.IndexOutOfBoundsException;
