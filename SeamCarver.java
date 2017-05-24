@@ -22,7 +22,6 @@ public class SeamCarver {
       height = pic.height();
    }
 
-
    //The picture contained in the sc data structure.
    public Picture picture() {
       return pic;
