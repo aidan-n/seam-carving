@@ -194,9 +194,7 @@ public class SeamCarver {
                newPic.set(col, row, pic.get(col, row));
             else
                newPic.set(col, row, pic.get(col, row + 1));
-
          }
-
       height--;
       pic = new Picture(newPic);
    }
@@ -210,17 +208,17 @@ public class SeamCarver {
 
       for (int row = 0; row < height(); row++)
          for (int col = 0; col < width() - 1; col++) {
-            
+
             if (col < seam[row])
                newPic.set(col, row, pic.get(col, row));
             else
                newPic.set(col, row, pic.get(col + 1, row));
-       }
-
+         }
       width--;
       pic = new Picture(newPic);
    }
 
+   //Tests SeamCarver
    public static void main(String args[]) {
       Picture inputImg = new Picture(args[0]);
       SeamCarver sc = new SeamCarver(inputImg);
