@@ -117,10 +117,10 @@ public class SeamCarver {
                if (i >= 0 && i < height()) {
                   next = id2str(col + 1, i);
                   double newEng = energy(col + 1, i) + energyTo.get(cur);
+                  
                   //If we don't have a next edge yet, add one. Or, if this edge
                   // is better than the one we have, use it.
-                  if (energyTo.get(next) == null || newEng < energyTo.get(next)) {
-                  
+                  if (energyTo.get(next) == null || newEng < energyTo.get(next)) {        
                      edgeTo.put(next, cur);
                      energyTo.put(next, newEng);
 
@@ -157,10 +157,11 @@ public class SeamCarver {
                if (k >= 0 && k < width()) {
                   next = id2str(k, row + 1);
                   double newEng = energy(k, row + 1) + energyTo.get(cur);
-                  if (energyTo.get(next) == null || newEng < energyTo.get(next)) {
                   
+                  if (energyTo.get(next) == null || newEng < energyTo.get(next)) {
                      edgeTo.put(next, cur);
                      energyTo.put(next, newEng);
+                     
                      if (row + 1 == height() - 1 && newEng < cost) {
                         cost = newEng;
                         end = next;
