@@ -210,12 +210,11 @@ public class SeamCarver {
 
       for (int row = 0; row < height(); row++)
          for (int col = 0; col < width() - 1; col++) {
-
+            
             if (col < seam[row])
                newPic.set(col, row, pic.get(col, row));
             else
                newPic.set(col, row, pic.get(col + 1, row));
-
        }
 
       width--;
