@@ -4,7 +4,6 @@ import java.lang.IndexOutOfBoundsException;
 import java.lang.Math;
 import java.util.Arrays;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import edu.princeton.cs.algs4.Picture;
 
