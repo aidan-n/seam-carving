@@ -1,6 +1,6 @@
 # Seam-Carving
 
-###Before                                 ###After
+##Before                                 ##After
 ![Screenshot](docs/images/tower.jpg) --> ![Screenshot](docs/images/small.jpg)
 
 This project uses the algs4 library from Princeton University, which can be downloaded as a .jar here:
