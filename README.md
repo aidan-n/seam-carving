@@ -2,8 +2,8 @@
 
    
    
-##               Before                                 After
-![Screenshot](docs/images/tower.jpg)   ![Screenshot](docs/images/small.jpg)
+##               Before                                  After
+![Screenshot](docs/images/tower.jpg)       ![Screenshot](docs/images/small.jpg)
 
   
   
