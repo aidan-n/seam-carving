@@ -1,6 +1,3 @@
-
-//changed the name "distTo" to "energyTo"
-
 package sc;
 
 import java.awt.Color;
@@ -9,9 +6,7 @@ import java.lang.IndexOutOfBoundsException;
 import java.lang.Math;
 import java.util.Arrays;
 import java.util.ArrayList;
-//import java.util.Collections;
 import java.util.HashMap;
-//import java.util.List;
 import edu.princeton.cs.algs4.Picture;
 
 
@@ -243,7 +238,7 @@ public class SeamCarver {
       }
 
       // Resize the height; remove horizontal seams.
-       if (mode.equals("height")) {
+      else if (mode.equals("height")) {
          while (this.height() > dimension) {
                System.out.println("resizing... Currently at height " + 
                   this.height());
@@ -252,27 +247,10 @@ public class SeamCarver {
          }
       }
 
-      //else throw new IllegalArgumentException();
+      else throw new IllegalArgumentException();
 
       // Return the resized image.
       return this.picture();
    }
 
-   /**
-   public static void main(String args[]) {
-   	System.out.println("asdf");
-      Picture inputImg = new Picture(args[0]);
-      SeamCarver sc = new SeamCarver(inputImg);
-      inputImg.show();
-
-      while (sc.width > 500)
-      {
-         System.out.println("resizing... Currently at width " + sc.width());
-         int[] seam = sc.findVerticalSeam();
-         sc.removeVerticalSeam(seam);
-      }
-
-      sc.picture().show();
-   }
-   **/
 }
