@@ -24,7 +24,9 @@ Set up the algs4 library, from the link mentioned earlier in the readme. On that
 For linux users, note that `~` is the same as `/home/[User-Name]/`. If you are unsure of your shell version, you can find out by doing `$ echo $SHELL`.
 
 Once done with that, you will be able to compile the two java files in your local repo.
+
 `$ javac -d . SeamCarver.java`
+
 `$ javac -d . Client.java`
 
 Have the image you want to seamcarve in the project directory. In other words, have the image you want to resize in the same folder you have Client.java and SeamCarver.java in.
