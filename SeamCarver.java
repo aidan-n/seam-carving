@@ -1,3 +1,5 @@
+package sc;
+
 import java.awt.Color;
 import java.lang.IllegalArgumentException;
 import java.lang.IndexOutOfBoundsException;
