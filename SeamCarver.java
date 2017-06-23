@@ -1,3 +1,6 @@
+
+//changed the name "distTo" to "energyTo"
+
 package sc;
 
 import java.awt.Color;
@@ -6,8 +9,11 @@ import java.lang.IndexOutOfBoundsException;
 import java.lang.Math;
 import java.util.Arrays;
 import java.util.ArrayList;
+//import java.util.Collections;
 import java.util.HashMap;
+//import java.util.List;
 import edu.princeton.cs.algs4.Picture;
+
 
 public class SeamCarver {
 
@@ -21,6 +27,7 @@ public class SeamCarver {
       width = pic.width();
       height = pic.height();
    }
+
 
    //The picture contained in the sc data structure.
    public Picture picture() {
@@ -117,10 +124,10 @@ public class SeamCarver {
                if (i >= 0 && i < height()) {
                   next = id2str(col + 1, i);
                   double newEng = energy(col + 1, i) + energyTo.get(cur);
-                  
                   //If we don't have a next edge yet, add one. Or, if this edge
                   // is better than the one we have, use it.
-                  if (energyTo.get(next) == null || newEng < energyTo.get(next)) {        
+                  if (energyTo.get(next) == null || newEng < energyTo.get(next)) {
+                  
                      edgeTo.put(next, cur);
                      energyTo.put(next, newEng);
 
@@ -157,11 +164,10 @@ public class SeamCarver {
                if (k >= 0 && k < width()) {
                   next = id2str(k, row + 1);
                   double newEng = energy(k, row + 1) + energyTo.get(cur);
-                  
                   if (energyTo.get(next) == null || newEng < energyTo.get(next)) {
+                  
                      edgeTo.put(next, cur);
                      energyTo.put(next, newEng);
-                     
                      if (row + 1 == height() - 1 && newEng < cost) {
                         cost = newEng;
                         end = next;
@@ -195,7 +201,9 @@ public class SeamCarver {
                newPic.set(col, row, pic.get(col, row));
             else
                newPic.set(col, row, pic.get(col, row + 1));
+
          }
+
       height--;
       pic = new Picture(newPic);
    }
@@ -214,18 +222,50 @@ public class SeamCarver {
                newPic.set(col, row, pic.get(col, row));
             else
                newPic.set(col, row, pic.get(col + 1, row));
-         }
+
+       }
+
       width--;
       pic = new Picture(newPic);
    }
 
-   //Tests SeamCarver
+   // Resizes the picture to a specified width or height.
+   public Picture resizeTo(String mode, int dimension)
+   {
+      // Resize the width; remove vertical seams.
+      if (mode.equals("width")) {
+         while (this.width() > dimension) {
+               System.out.println("resizing... Currently at width " + 
+                  this.width());
+               int[] seam = this.findVerticalSeam();
+               this.removeVerticalSeam(seam);
+         }
+      }
+
+      // Resize the height; remove horizontal seams.
+       if (mode.equals("height")) {
+         while (this.height() > dimension) {
+               System.out.println("resizing... Currently at height " + 
+                  this.height());
+               int[] seam = this.findHorizontalSeam();
+               this.removeHorizontalSeam(seam);
+         }
+      }
+
+      //else throw new IllegalArgumentException();
+
+      // Return the resized image.
+      return this.picture();
+   }
+
+   /**
    public static void main(String args[]) {
+   	System.out.println("asdf");
       Picture inputImg = new Picture(args[0]);
       SeamCarver sc = new SeamCarver(inputImg);
       inputImg.show();
 
-      while (sc.width > 250)
+      while (sc.width > 500)
       {
          System.out.println("resizing... Currently at width " + sc.width());
          int[] seam = sc.findVerticalSeam();
@@ -234,4 +274,5 @@ public class SeamCarver {
 
       sc.picture().show();
    }
+   **/
 }
