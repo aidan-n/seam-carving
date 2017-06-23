@@ -77,8 +77,8 @@ public class Client {
 
 		System.out.println("Enter the the image to resize:");
 		input = scanner.nextLine();
-        Picture inputImg = new Picture(input);
-        SeamCarver seamCarver = new SeamCarver(inputImg);
+        	Picture inputImg = new Picture(input);
+        	SeamCarver seamCarver = new SeamCarver(inputImg);
 
 		if (mode.equals("width")) {
 			resizeWidth(seamCarver);
