@@ -20,7 +20,7 @@ All other imported libraries are part of the Java Development Kit (JDK).
 Clone the repository onto your computer:
 `$ git clone https://github.com/aidan-n/seam-carving.git`
 
-Set up the algs4 library, mentioned earlier in the readme. On that page, there are instructions on how to set up the library.
+Set up the algs4 library, from the link mentioned earlier in the readme. On that page, there are instructions on how to set up the library.
 For linux users, note that `~` is the same as `/home/[User-Name]/`. If you are unsure of your shell version, you can find out by doing `$ echo $SHELL`.
 
 Once done with that, you will be able to compile the two java files in your local repo.
@@ -32,7 +32,7 @@ Have the image you want to seamcarve in the project directory. In other words, h
 Run the program:
 `$ java sc.Client`
 
-Save the image if you want, and then close it to end the program.
+Closing the image ends the program.
 
 
 
